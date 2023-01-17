@@ -1,0 +1,58 @@
+<!-- text_editor.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Editor</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      h2 {
+        text-align: center;
+      }
+      label {
+        text-align: center;
+      }
+      form, ul {
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      #input {
+        width: 100%;
+      }
+    </style>
+</head>
+<body>
+    <!-- Console -->
+    <div id="console">
+        <form method="post">
+            <label for="input">Enter Funx code:</label><br>
+            <textarea id="input" name="input" rows="4" cols="50">{{ input_text }}</textarea><br>
+            <button type="submit">Execute</button>
+        </form>
+    </div>
+
+    <!-- Results -->
+    <div id="results">
+        <h2>Results</h2>
+        <ul id="result-list">
+            {% for result in results %}
+            <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Functions -->
+    <div id="functions">
+        <h2>Functions</h2>
+        <ul id="function-list">
+            {% for function in functions %}
+            <li>{{ function }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
